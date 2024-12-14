@@ -1,0 +1,155 @@
+# # Create user
+# POST http://localhost:8000/users
+# Content-Type: application/json
+
+# {
+#     "name": "Atomic",
+#     "email": "atomic@gmail.com",
+#     "password": "123456",
+#     "confPassword": "123456",
+#     "role": "admin"
+# }
+
+# ###
+
+# # Get all users
+# GET http://localhost:8000/users
+
+# ###
+
+# # Get single user
+# GET http://localhost:8000/users/59e21735-c9c8-463e-8908-7ee8c0516a95
+
+# ###
+
+# # Update a user
+# PATCH http://localhost:8000/users/572dd533-b651-45a2-9427-3da518281a19
+# Content-Type: application/json
+
+# {
+#     "name": "Richard Haris",
+#     "email": "richh@gmail.com",
+#     "password": "",
+#     "confPassword": "",
+#     "role": "user"
+# }
+
+# ###
+
+# # Delete user
+# DELETE http://localhost:8000/users/572dd533-b651-45a2-9427-3da518281a19
+
+# ###
+
+# # Login User
+# POST http://localhost:8000/login
+# Content-Type: application/json
+
+# {
+#     "email": "atomic@gmail.com",
+#     "password": "123456"
+# }
+
+# ###
+
+# # Login User
+# POST http://localhost:8000/login
+# Content-Type: application/json
+
+# {
+#     "email": "james@gmail.com",
+#     "password": "123456"
+# }
+
+# ###
+
+# # Get current user
+# GET http://localhost:8000/me
+
+# ###
+
+# # Logout
+# DELETE http://localhost:8000/logout
+
+
+
+
+
+
+
+
+
+
+### Create user
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "name": "Mike",
+    "email": "mike@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+
+###
+
+### Login User (x-www-form-urlencoded for OAuth2PasswordRequestForm)
+POST http://localhost:8000/login
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=&username=mike@gmail.com&password=123456&scope=&client_id=&client_secret=
+
+###
+
+### Set token manually
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNDZlZWYxMy1hOTY4LTRmYmMtOTgyYi1mYTBiMmNmMDNkOTciLCJleHAiOjE3MjI1NTcxMzJ9.Zd-WZSahQ8rE_VsOy_RKKnMKElsC8FcFQlcKwxUzMNc
+
+### Get all users
+GET http://localhost:8000/users
+Authorization: Bearer {{token}}
+
+###
+
+### Get single user
+GET http://localhost:8000/users/59e21735-c9c8-463e-8908-7ee8c0516a95
+Authorization: Bearer {{token}}
+
+###
+
+### Update a user
+PATCH http://localhost:8000/users/572dd533-b651-45a2-9427-3da518281a19
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "Richard Haris",
+    "email": "richh@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+}
+
+###
+
+### Delete user
+DELETE http://localhost:8000/users/572dd533-b651-45a2-9427-3da518281a19
+Authorization: Bearer {{token}}
+
+###
+
+### Get current user
+GET http://localhost:8000/me
+Authorization: Bearer {{token}}
+
+###
+
+### Logout
+DELETE http://localhost:8000/logout
+Authorization: Bearer {{token}}
+
+
+
+### Delete user
+DELETE http://localhost:8000/users/189d61d5-13d0-4318-a607-8290b495a29e
+Authorization: Bearer {{token}}

@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.layout-container {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+}
+
+.main1-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  bottom: 0;
+  height: 95vh;
+}
+
+
+
+
